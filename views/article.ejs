@@ -1,0 +1,22 @@
+<%- include('partials/layout.ejs') %>
+<title><%=article.title%></title>
+
+<div class="container">
+    <h1 class="mt-4"><%=article.title%></h1>
+    <%-article.body%>
+    <hr>
+    <h5><i class="fa fa-user"></i> <%=author%></h5>
+    
+    <p><i class="fa fa-calendar"></i> <%= article.createdAt.toDateString() %></p>
+    <a href="/" class="btn btn-primary mb-4">View Other Posts</a>
+    <%if (user) { %>
+    <a href="/articles/edit/<%=article._id%>" class="btn btn-secondary mb-4">Edit Post</a>
+    <a href="#" class="btn btn-danger delete-article mb-4" data-id="<%=article._id%>">Delete Post</a>
+    <% } %>
+
+    
+
+</div>
+
+
+

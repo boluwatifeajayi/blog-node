@@ -1,0 +1,38 @@
+<%- include('partials/layout.ejs') %>
+
+
+<title>Add New Post</title>
+<div class="container">
+    <script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
+    <h1 class="mb-4 mt-4">Add Post</h1>
+    <form action="/articles/add" method="post">
+        <div class="form-group">
+            <label for="title">Title Of The Post</label>
+            <input type="text" class="form-control" name="title"  required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Brief Summary Of The Post</label>
+            <textarea type="text" class="form-control" name="description" required></textarea>
+        </div>
+       
+        <div class="form-group">
+            <label for="body">Body Of Post</label>
+            <textarea class="form-control" name="body" id="editor"></textarea>
+        </div>
+
+        
+        <br>
+        <input type="submit" value="Add Post" class="btn btn-primary">
+        <a href="/" class="btn btn-secondary">Cancel</a>
+        <script>
+            ClassicEditor
+                .create(document.querySelector('#editor'))
+                .catch(error => {
+                    console.error(error);
+                });
+        </script>
+    </form>
+    
+</div>
+
