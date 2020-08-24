@@ -12,7 +12,7 @@ const hbs = require('hbs');
 mongoose.connect(config.database,{ useNewUrlParser: true, useUnifiedTopology: true});
 let db = mongoose.connection;
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 //check connection
 db.once('open', function(){
@@ -78,7 +78,7 @@ app.get('/', function(req, res){
             console.log(err);
         }else{
             res.render('index', {
-                title: "Innovate Blog Posts",
+                title: "innovate",
                 description: "Short description of the article",
                 createdAt: new Date(),
                 articles: articles

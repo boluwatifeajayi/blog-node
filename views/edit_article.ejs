@@ -13,6 +13,10 @@
             <textarea type="text" class="form-control" name="description" required><%-article.description%></textarea>
         </div>
         <div class="form-group">
+            <label for="description">Valid Image Url</label>
+            <input type="url" class="form-control" name="image" value="<%-article.image%>" required>
+        </div>
+        <div class="form-group">
             <label for="body">Body</label>
             <textarea class="form-control" name="body" id="editor"><%-article.body%></textarea>
 

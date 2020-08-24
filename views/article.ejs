@@ -1,8 +1,20 @@
 <%- include('partials/layout.ejs') %>
 <title><%=article.title%></title>
+<style>
+    img{
+        height: 400px;
+    }
+    @media(max-width: 700px) {
+        img{
+        height: 250px;
+        }
+}
+</style>
 
 <div class="container">
-    <h1 class="mt-4"><%=article.title%></h1>
+    
+    <img src="<%=article.image%>" class="mb-4 mt-4" alt="<%=article.title%>">
+    <h3 class="mt-4 mb-4"><%=article.title%></h3>
     <%-article.body%>
     <hr>
     <h5><i class="fa fa-user"></i> <%=author%></h5>

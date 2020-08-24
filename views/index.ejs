@@ -3,17 +3,18 @@
 <title>Innovate - Blog</title>
 <div class="container">
     <h1 class="mt-4 mb-4">Blog Posts</h1>
+    
     <% for (key in articles) { %>
-
-    <div class="card w-80 mb-4">
-        <div class="card-body">
-            <h4 class="card-title"><%= articles[key].title %></h4>
+    <section class="carder" data-aos="fade-right">
+        <img src="<%=articles[key].image%>" alt="<%= articles[key].title %>">
+        <div>
+            <h3><%= articles[key].title %></h3>
             <p><i class="fa fa-calendar"></i> <%= articles[key].createdAt.toDateString() %></p>
             <p><%=articles[key].description%></p>
             <a href="/articles/<%=articles[key]._id%>" class="btn btn-primary">Read More..</a>
+            
         </div>
-    </div>
-
+    </section>
     <% } %>
 
     

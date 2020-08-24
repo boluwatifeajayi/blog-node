@@ -36,6 +36,7 @@ router.post('/add', function (req, res) {
     article.description = req.body.description;
     article.createdAt = req.body.createdAt;
     article.body = req.body.body;
+    article.image = req.body.image;
 
     req.flash('success', 'Article Added')
     article.save(function (err) {

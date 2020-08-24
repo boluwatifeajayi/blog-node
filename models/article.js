@@ -14,6 +14,9 @@ let articleSchema = mongoose.Schema({
     description: {
         type: String
     },
+    image: {
+        type: String
+    },
     body:{
         type: String,
         required: true

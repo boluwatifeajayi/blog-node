@@ -1,13 +1,42 @@
-
-.alert-error{
-    color:#a94442;
-    background-color: #f2dede;
-    border-color: #ebccd1;
+img{
+    width: 100%;
 }
 
-.alert-success_msg{
-    color: #3c763d;
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
+.carder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    background-color: #f1f1f1;
+    margin-bottom: 2rem;
+}
+
+.carder h3 {
+    margin-bottom: 1rem;
+}
+
+.carder img {
+    height: 300px;
+}
+
+.carder>div {
+    padding: 2rem;
+}
+
+.carder:nth-child(even) img {
+    order: 2;
+}
+
+
+
+@media(max-width: 700px) {
+    .carder {
+        display: block;
+    }
+    .carder img {
+        height: 200px;
+    }
+    .carder>div {
+        padding: 1rem;
+    }
 }
 
