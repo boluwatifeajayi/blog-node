@@ -2,33 +2,57 @@
 <title><%=article.title%></title>
 <style>
     img{
-        height: 400px;
+        height: 350px;
+    }
+    p{
+    font-size: 20px;
     }
     @media(max-width: 700px) {
         img{
-        height: 250px;
+        height: 200px;
         }
 }
 </style>
 
 <div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <img src="<%=article.image%>" class="mb-4 mt-4" alt="<%=article.title%>">
+            <h2 class="mt-4 mb-4"><%=article.title%></h2>
+            
+                <p style="font-size: 18px;"><i class="fa fa-user"></i> By <strong><%= article.writer %></strong></p>
+            
+            
+                <p style="font-size: 18px;"><i class="fa fa-calendar"></i> <%= article.postDate %></p>
+            
+            <%-article.body%>
+            <hr>
+            
+            <a href="/" class="mb-4 mt-4" style="font-size: 23px; margin-bottom: 40px;">Read More Posts <i
+                    class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i></a>
+            <%if (user) { %>
+            <a href="/articles/edit/<%=article._id%>" class="btn btn-secondary mb-4">Edit Post</a>
+            <a href="#" class="btn btn-danger delete-article mb-4" data-id="<%=article._id%>">Delete Post</a>
+            <% } %>
+        </div>
+        <div class="col-sm-2">
+            
+            <h1>Articles</h1>
+            
+
+        </div>
+        
+    </div>
     
-    <img src="<%=article.image%>" class="mb-4 mt-4" alt="<%=article.title%>">
-    <h3 class="mt-4 mb-4"><%=article.title%></h3>
-    <%-article.body%>
-    <hr>
-    <h5><i class="fa fa-user"></i> <%=author%></h5>
-    
-    <p><i class="fa fa-calendar"></i> <%= article.createdAt.toDateString() %></p>
-    <a href="/" class="btn btn-primary mb-4">View Other Posts</a>
-    <%if (user) { %>
-    <a href="/articles/edit/<%=article._id%>" class="btn btn-secondary mb-4">Edit Post</a>
-    <a href="#" class="btn btn-danger delete-article mb-4" data-id="<%=article._id%>">Delete Post</a>
-    <% } %>
 
     
 
 </div>
+
+<div style="margin-top:40px;">
+<%- include('partials/footer.ejs') %>
+</div>
+
 
 
 

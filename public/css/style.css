@@ -1,6 +1,17 @@
+body{
+    
+    font-family: 'Quicksand',
+    sans-serif;
+}
+
 img{
     width: 100%;
 }
+
+h2, h3, h4, h5, h6, strong, a, i{
+    color: #007bff;
+}
+
 
 .carder {
     display: grid;
@@ -19,12 +30,23 @@ img{
 }
 
 .carder>div {
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .carder:nth-child(even) img {
     order: 2;
 }
+
+#searchbar {
+    padding: 13px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+#nothing{
+    display: none;
+}
+
 
 
 

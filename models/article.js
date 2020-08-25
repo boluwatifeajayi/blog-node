@@ -17,6 +17,12 @@ let articleSchema = mongoose.Schema({
     image: {
         type: String
     },
+    writer: {
+        type: String
+    },
+    postDate: {
+        type: String
+    },
     body:{
         type: String,
         required: true

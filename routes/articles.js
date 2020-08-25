@@ -37,6 +37,8 @@ router.post('/add', function (req, res) {
     article.createdAt = req.body.createdAt;
     article.body = req.body.body;
     article.image = req.body.image;
+    article.writer = req.body.writer;
+    article.postDate = req.body.postDate;
 
     req.flash('success', 'Article Added')
     article.save(function (err) {
@@ -56,7 +58,12 @@ router.post("/edit/:id", function (req, res) {
     let article = {};
     article.title = req.body.title;
     article.author = req.user._id;
+    article.description = req.body.description;
+    article.createdAt = req.body.createdAt;
     article.body = req.body.body;
+    article.image = req.body.image;
+    article.writer = req.body.writer;
+    article.postDate = req.body.postDate;
 
     let query = {
         _id: req.params.id

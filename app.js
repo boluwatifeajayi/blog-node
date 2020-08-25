@@ -80,7 +80,6 @@ app.get('/', function(req, res){
             res.render('index', {
                 title: "innovate",
                 description: "Short description of the article",
-                createdAt: new Date(),
                 articles: articles
                 
             });
@@ -88,6 +87,27 @@ app.get('/', function(req, res){
         
     }).sort();
     
+});
+app.get('/', function (req, res) {
+    Article.find({}, function (err, articles, article) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('index', {
+                title: "innovate",
+                description: "Short description of the article",
+                articles: articles
+
+            });
+        }
+
+    }).sort();
+
+});
+
+//about route
+app.get('/about', function (req, res) {
+   res.render('about');
 });
 
 //route files
