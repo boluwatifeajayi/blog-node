@@ -30,6 +30,10 @@ let articleSchema = mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    postNumber: {
+        type: Number,
+        default: 999999
     }
     
 });

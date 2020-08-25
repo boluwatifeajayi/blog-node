@@ -64,7 +64,7 @@ router.post("/edit/:id", function (req, res) {
     article.image = req.body.image;
     article.writer = req.body.writer;
     article.postDate = req.body.postDate;
-
+ 
     let query = {
         _id: req.params.id
     }

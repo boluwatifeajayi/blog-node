@@ -26,7 +26,7 @@ h2, h3, h4, h5, h6, strong, a, i{
 }
 
 .carder img {
-    height: 300px;
+    height: 330px;
 }
 
 .carder>div {
@@ -38,7 +38,7 @@ h2, h3, h4, h5, h6, strong, a, i{
 }
 
 #searchbar {
-    padding: 13px;
+    padding: 8px;
     border-radius: 5px;
     margin-bottom: 50px;
 }

@@ -85,7 +85,7 @@ app.get('/', function(req, res){
             });
         }
         
-    }).sort();
+    }).sort({postDate: 'desc'});
     
 });
 app.get('/', function (req, res) {
@@ -95,13 +95,12 @@ app.get('/', function (req, res) {
         } else {
             res.render('index', {
                 title: "innovate",
-                description: "Short description of the article",
                 articles: articles
 
             });
         }
 
-    }).sort();
+    });
 
 });
 
