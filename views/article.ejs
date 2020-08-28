@@ -1,12 +1,24 @@
 <%- include('partials/layout.ejs') %>
 <title><%=article.title%></title>
 <style>
+    body{
+        background-color: #f1f1f1;
+    }
     img{
         height: 350px;
     }
     p{
-    font-size: 20px;
+    font-size: 19px;
     }
+    .post-body{
+    background-color: white;
+    margin-top: 45px;
+    border-radius: 9px;
+    }
+    .side{
+        margin-top:45px;
+    }
+
     @media(max-width: 700px) {
         img{
         height: 200px;
@@ -16,7 +28,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-lg-8 post-body">
             <img src="<%=article.image%>" class="mt-4" alt="<%=article.title%>">
             <h3 class="mt-4 mb-4"><%=article.title%></h3>
             
@@ -26,15 +38,53 @@
             <%-article.body%>
             <hr>
             
-            <a href="/" class="mb-4 mt-4" style="font-size: 23px; margin-bottom: 40px;">Read More Posts <i
-                    class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i></a>
+            
             <%if (user) { %>
             <a href="/articles/edit/<%=article._id%>" class="btn btn-secondary mb-4">Edit Post</a>
             <a href="#" class="btn btn-danger delete-article mb-4" data-id="<%=article._id%>">Delete Post</a>
             <% } %>
         </div>
-        <div class="col-sm-2">
-        
+        <div class="col-lg-4">
+            
+
+            <div class="side">
+                <h3 class="mt-4">Recommended Reads For You</h3>
+            </div>
+            
+            <b>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="<%=article.nextLinkOne%>">
+                            <p>
+                                <%=article.nextTitleOne%>
+                            </p>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="<%=article.nextLinkTwo%>">
+                            <p>
+                                <%=article.nextTitleTwo%>
+                            </p>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="<%=article.nextLinkThree%>">
+                            <p>
+                                <%=article.nextTitleThree%>
+                            </p>
+                        </a>
+                    </li>
+
+                </ul>
+                
+            </b>
+            <div style="margin-top: 40px;">
+                 <a href="/" class="mb-4 mt-4 btn btn-primary" style="font-size: 23px; margin-bottom: 40px;">View All Posts <i
+                         class="fa fa-chevron-right" style="color: white;"></i><i class="fa fa-chevron-right"
+                             style="color: white;"></i></a>
+            </div>
+           
+            
             
 
         </div>

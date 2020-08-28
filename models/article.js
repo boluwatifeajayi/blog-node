@@ -34,7 +34,26 @@ let articleSchema = mongoose.Schema({
     postNumber: {
         type: Number,
         default: 999999
+    },
+    nextTitleOne: {
+        type: String,
+    },
+    nextLinkOne: {
+        type: String
+    },
+    nextTitleTwo: {
+        type: String,
+    },
+    nextLinkTwo: {
+        type: String
+    },
+    nextTitleThree: {
+        type: String,
+    },
+    nextLinkThree: {
+        type: String
     }
+
     
 });
 

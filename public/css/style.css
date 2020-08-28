@@ -2,6 +2,8 @@ body{
     
     font-family: 'Quicksand',
     sans-serif;
+    color: #555;
+    background-color: #f1f1f1;
 }
 
 img{
@@ -13,12 +15,14 @@ h2, h3, h4, h5, h6, strong, a, i{
 }
 
 
+
 .carder {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
-    background-color: #f1f1f1;
+    background-color: white;
     margin-bottom: 2rem;
+    border-radius: 6px;
 }
 
 .carder h3 {

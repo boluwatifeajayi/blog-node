@@ -33,12 +33,38 @@
             <label for="body">Body Of Post</label>
             <textarea class="form-control" name="body" id="editor"></textarea>
         </div>
+        <hr>
+        <h4>Recommended Read Posts (Optional)</h4>
+        <div class="form-group">
+            <label for="description">Recommended One Title (Optional)</label>
+            <input type="text" class="form-control" name="nextTitleOne">
+        </div>
+        <div class="form-group">
+            <label for="description">Recommended One Link (Optional)</label>
+            <input type="url" class="form-control" name="nextLinkOne">
+        </div>
+        <div class="form-group">
+            <label for="description">Recommended Two Title (Optional)</label>
+            <input type="text" class="form-control" name="nextTitleTwo">
+        </div>
+        <div class="form-group">
+            <label for="description">Recommended Two Link (Optional)</label>
+            <input type="url" class="form-control" name="nextLinkTwo">
+        </div>
+        <div class="form-group">
+            <label for="description">Recommended Three Title (Optional)</label>
+            <input type="text" class="form-control" name="nextTitleThree">
+        </div>
+        <div class="form-group">
+            <label for="description">Recommended Three Link (Optional)</label>
+            <input type="url" class="form-control" name="nextLinkThree">
+        </div>
         
 
         
         <br>
-        <input type="submit" value="Add Post" class="btn btn-primary">
-        <a href="/" class="btn btn-secondary">Cancel</a>
+        <input type="submit" value="Add Post" class="btn btn-primary mb-4">
+        <a href="/" class="btn btn-secondary mb-4">Cancel</a>
         <script>
             ClassicEditor
                 .create(document.querySelector('#editor'))

@@ -39,6 +39,12 @@ router.post('/add', function (req, res) {
     article.image = req.body.image;
     article.writer = req.body.writer;
     article.postDate = req.body.postDate;
+    article.nextTitleOne = req.body.nextTitleOne;
+    article.nextLinkOne = req.body.nextLinkOne;
+    article.nextTitleTwo = req.body.nextTitleTwo;
+    article.nextLinkTwo = req.body.nextLinkTwo;
+    article.nextTitleThree = req.body.nextTitleThree;
+    article.nextLinkThree = req.body.nextLinkThree;
 
     req.flash('success', 'Article Added')
     article.save(function (err) {
@@ -64,6 +70,12 @@ router.post("/edit/:id", function (req, res) {
     article.image = req.body.image;
     article.writer = req.body.writer;
     article.postDate = req.body.postDate;
+    article.nextTitleOne = req.body.nextTitleOne;
+    article.nextLinkOne = req.body.nextLinkOne;
+    article.nextTitleTwo = req.body.nextTitleTwo;
+    article.nextLinkTwo = req.body.nextLinkTwo;
+    article.nextTitleThree = req.body.nextTitleThree;
+    article.nextLinkThree = req.body.nextLinkThree;
 
     let query = {
         _id: req.params.id
