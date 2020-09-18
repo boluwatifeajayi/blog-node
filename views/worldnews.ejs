@@ -1,0 +1,69 @@
+<%- include('partials/layout.ejs') %>
+
+<title>Innovate - Blog</title>
+<style>
+    input[type=text] {
+        width: 25%;
+        -webkit-transition: width 0.15s ease-in-out;
+        transition: width 0.15s ease-in-out;
+    }
+
+    input[type=text]:focus {
+        width: 80%;
+
+    }
+
+    input {
+        border: 1px solid #999;
+    }
+
+    @media(max-width: 700px) {
+        input[type=text] {
+            width: 50%;
+            -webkit-transition: width 0.15s ease-in-out;
+            transition: width 0.15s ease-in-out;
+        }
+    }
+</style>
+<div class="container">
+
+
+
+    <h1 class="mt-4 mb-4">Posts On World News</h1>
+    <input id="searchbar" onkeyup="search_animal()" type="text" name="search" placeholder="Search Posts..">
+
+    <% for (key in articles) { %>
+
+    <div id="list">
+        <div class="animals">
+            <%if (articles[key].category === "World News") { %>
+            <section class="carder" data-aos="fade-right">
+                <img src="<%=articles[key].image%>" alt="<%= articles[key].title %>">
+                <div>
+                    <a href="/articles/<%=articles[key]._id%>">
+                        <h4><%= articles[key].title %></h4>
+                    </a>
+                    <p><i class="fa fa-list-alt"></i> <%= articles[key].category %></p>
+                    <p><i class="fa fa-user"></i> <%= articles[key].writer%></p>
+                    <p><i class="fa fa-calendar"></i> <%= articles[key].postDate %></p>
+                    <p><%=articles[key].description%></p>
+                    <a href="/articles/<%=articles[key]._id%>" class="btn btn-primary">Read More..</a>
+
+                </div>
+            </section>
+            <% } %>
+
+            </section>
+        </div>
+
+    </div>
+
+    <% } %>
+
+    <h1 id="nothing" style="margin-bottom: 90px;">"Oops Nothing Returned For That Search, Try Something else"</h1>
+
+
+
+
+</div>
+<%- include('partials/footer.ejs') %>
