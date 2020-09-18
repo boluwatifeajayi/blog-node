@@ -18,7 +18,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-        <a class="navbar-brand" href="/">bCodez</a>
+        <a class="navbar-brand" href="/">iNNOVATIVE</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,27 +28,45 @@
             <ul class="navbar-nav mr-auto">
                 
                 
-                <li class="nav-item">
-                    <a class="nav-link" href='/' style="color: white;">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href='/' style="color: white;">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href='/about' style="color: white;">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href='/' style="color: white;">News Letter</a>
-                </li>
+                
                 
             </ul>
+            <li class="nav-item">
+                <a class="nav-link" href='/' style="color: white;">Home</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href='/about' style="color: white;">About</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="color: white;" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Blog Posts
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/allposts">All Blog Post Categories</a>
+                    <a class="dropdown-item" href="/lifestyle">Life Style</a>
+                    <a class="dropdown-item" href="/lifehacks">Life Hacks</a>
+                    <a class="dropdown-item" href="/worldnews">World News</a>
+                    <a class="dropdown-item" href="/food_and_dishes">Food And Dishes</a>
+                    <a class="dropdown-item" href="/technology_and_webdevelopment">Technology and Web
+                        Development</a>
+                    <a class="dropdown-item" href="/gaming_and_fiction">Gaming and Tv</a>
+                    <a class="dropdown-item" href="/entertainment">Entertainment</a>
+                    <a class="dropdown-item" href="/other">Others</a>
+                    
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href='/home#newletter' style="color: white;">News Letter</a>
+            </li>
                 <%if (user) { %>
                  <a class="nav-link btn btn-light" href='/articles/add' style="color: dodgerblue; font-weight: bolder;">Add
                      New Post</a>
                 <% } %>
                 <%if (!user) { %>
                 <a class="nav-link btn btn-light" href='/users/login'
-                    style="color: dodgerblue; font-weight: bolder;">Admin <i class="fa fa-user"></i></a>
+                    style="color: dodgerblue; font-weight: bolder;">Admin Section <i class="fa fa-user"></i></a>
                 <% } else { %>
                 <a class="nav-link" href='/users/logout' style="color: white;">Logout</a>
                 <% } %>

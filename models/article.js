@@ -31,6 +31,9 @@ let articleSchema = mongoose.Schema({
         type: Date,
         default: Date.now
     },
+    category: {
+        type: String,
+    },
     postNumber: {
         type: Number,
         default: 999999

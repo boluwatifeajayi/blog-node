@@ -1,68 +1,322 @@
-<%- include('partials/layout.ejs') %>
+<!DOCTYPE html>
+<html>
 
-<title>Innovate - Blog</title>
-<style>
-    
-    input[type=text] {
-    width: 25%;
-    -webkit-transition: width 0.15s ease-in-out;
-    transition: width 0.15s ease-in-out;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google-site-verification" content="Pk-LilHCNJdJ_yn-6WDGAiQLA7hrHG8r8VEul-9660s" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/home.css">
 
-    input[type=text]:focus {
-    width: 80%;
-    
-    }
-    input{
-        border: 1px solid #999;
-    }
-    @media(max-width: 700px) {
-    input[type=text] {
-    width: 50%;
-    -webkit-transition: width 0.15s ease-in-out;
-    transition: width 0.15s ease-in-out;
-    }
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Quicksand&display=swap" rel="stylesheet">
 
-</style>
-<div class="container">
-    
+    <title>Innovative - Your Trusty Source Of Innovative And Healthy Knowledge</title>
 
-    
-    <h1 class="mt-4 mb-4">Blog Posts</h1>
-    <input id="searchbar" onkeyup="search_animal()" type="text" name="search" placeholder="Search Posts..">
-    
-    <% for (key in articles) { %>
-        
-    <div id="list">
-        <div class="animals">
-            <section class="carder" data-aos="fade-right">
-                <img src="<%=articles[key].image%>" alt="<%= articles[key].title %>">
-                <div>
-                    <a href="/articles/<%=articles[key]._id%>">
-                        <h4><%= articles[key].title %></h4>
-                    </a>
-                    
-                    <p><i class="fa fa-user"></i> <%= articles[key].writer%></p>
-                    <p><i class="fa fa-calendar"></i> <%= articles[key].postDate %></p>
-                    <p><%=articles[key].description%></p>
-                    <a href="/articles/<%=articles[key]._id%>" class="btn btn-primary">Read More..</a>
+</head>
+
+<body>
+    <div class="section-one" style="background-image:
+	    linear-gradient(rgba(0,0.7,0,0.5),rgba(0,0.7,0,0.5)),url(https://cdn.pixabay.com/photo/2020/02/21/13/41/idea-4867554__340.jpg);
+	    background-size: cover; background-position: center; background-color:dimgrey;">
+        <div class="header">
+            <div class="nav">
+                <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: transparent;">
+                    <a class="navbar-brand" href="/">iNNOVATIVE</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">
+                            <div class="container" onclick="myFunction(this)">
+                                <i class="fa fa-bars fa-2x" style="color: white;" id="menuBtn" onclick="menuBtn()"></i>
+                                <i class="fa fa-bars fa-2x" style="color: white;" id="menuBtn"
+                                    onclick="cancelBtn()"></i>
+                            </div>
+                        </span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about">About Us</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Blog Posts
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/allposts">All Blog Post Categories</a>
+                                    <a class="dropdown-item" href="/lifestyle">Life Style</a>
+                                    <a class="dropdown-item" href="/lifehacks">Life Hacks</a>
+                                    <a class="dropdown-item" href="/worldnews">World News</a>
+                                    <a class="dropdown-item" href="/food_and_dishes">Food And Dishes</a>
+                                    <a class="dropdown-item" href="/technology_and_webdevelopment">Technology and Web
+                                        Development</a>
+                                    <a class="dropdown-item" href="/gaming_and_fiction">Gaming and Tv</a>
+                                    <a class="dropdown-item" href="/entertainment">Entertainment</a>
+                                    <a class="dropdown-item" href="/other">Others</a>
+
+                                </div>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#newletter">News Letter</a>
+                            </li>
+                            <%if (user) { %>
+                            <a class="btn btn-primary admin" href='/articles/add'>Add
+                                New Post <i class="fa fa-plus"></i></a>
+                            <% } %>
+                            <%if (!user) { %>
+                            <a class="btn btn-primary admin" style="font-size: 15px;" href='/users/login'>Admin
+                                Section <i class="fa fa-user"></i></a>
+                            <% } else { %>
+
+                            <% } %>
+
+
+                            <!-- <a class="nav-link" href='/users/registerjoin' style="color: white;">Register</a> -->
+                        </ul>
+
+                    </div>
+                </nav>
+            </div>
+            <div class="action container">
+                <h1>Your Trusty Source Of <span class="secondary">Innovative</span> And <span
+                        class="secondary">Healthy</span> Knowledge</h1>
+                <h3>Innovative Blog</h3>
+
+                <a class="btn btn-lg" href="#bod">Explore Now</a>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="" id="bod">
+        <div class="section-two">
+
+            <div class="">
+                <div class="post-slider">
+                    <h1 class="slider-title" style="color: #555;">Latest On The Blog</h1>
+                    <i class="fa fa-chevron-left prev"></i>
+                    <i class="fa fa-chevron-right next"></i>
+                    <div class="post-wrapper">
+                        <% for (key in articles) { %>
+                        <div class="post">
+                            <img src="<%=articles[key].image%>" alt="<%= articles[key].title %>" class="slider-image">
+                            <div class="post-info">
+                                <h4>
+                                    <h4><a href="single.html"><a
+                                                href="/articles/<%=articles[key]._id%>"><%= articles[key].title %></a></a>
+                                    </h4>
+                                    <i class="fa fa-user" style="color: #555;"> <%= articles[key].writer%></i>
+                                    &nbsp;
+                                    <i class="fa fa-calendar" style="color: #555;">
+                                        <%= articles[key].postDate %></i><br>
+                                    <i class="fa fa-list-alt" style="color: #555;"> <%= articles[key].category %></i>
+                                </h4>
+                            </div>
+                        </div>
+                        <% } %>
+
+                    </div>
+
+                    <div style="margin-top: 40px; align-items: center; text-align: center; justify-content: center;">
+                        <a href="/allposts" class="mb-4 mt-4 btn btn-primary" style="font-size: 23px; margin-bottom: 40px;">View
+                            All
+                            Posts <i class="fa fa-chevron-right" style="color: white;"></i><i
+                                class="fa fa-chevron-right" style="color: white;"></i></a>
+                    </div>
 
                 </div>
-            </section>
+
+            </div>
+
+
+
         </div>
-        
-    </div>
-    
-    <% } %>
 
-    <h1 id="nothing" style="margin-bottom: 90px;">"Oops Nothing Returned For That Search, Try Something else"</h1>
+        <div class="container">
+            <div id="#cat">
+                <h1 class="mb-4" style="color: #555; text-align: center; justify-content: center; align-items: center;">
+                    Our
+                    Categories</h1>
+                <section class="carder" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1564940675711-ea4bac5109a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        alt="">
+                    <div>
+                        <h2 style="color: #333;">Life Hacks</h2>
 
-    
+                        <a href="/lifehacks" class="btn btn-primary" style="margin-top: 50px;">Read On This</a>
+                    </div>
+                </section>
+                <section class="carder" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1476242906366-d8eb64c2f661?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        alt="">
+                    <div>
+                        <h2 style="color: #333;">World News</h2>
+
+                        <a href="/worldnews" class="btn btn-primary" style="margin-top: 50px;">Read On This</a>
+                    </div>
+                </section>
+                <section class="carder" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1470076892663-af684e5e15af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        alt="">
+                    <div>
+                        <h2 style="color: #333;">Entertainment</h2>
+
+                        <a href="/entertainment" class="btn btn-primary" style="margin-top: 50px;">Read On This</a>
+                    </div>
+                </section>
+                <section class="carder" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        alt="">
+                    <div>
+                        <h2 style="color: #333;">Food and Dishes</h2>
+
+                        <a href="/food_and_dishes" class="btn btn-primary" style="margin-top: 50px;">Read On This</a>
+                    </div>
+                </section>
+                <section class="carder" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1559736226-d3f5bcaccb34?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        alt="">
+                    <div>
+                        <h2 style="color: #333;">Life Style</h2>
+
+                        <a href="/lifestyle" class="btn btn-primary" style="margin-top: 50px;">Read On This</a>
+                    </div>
+                </section>
+                <section class="carder" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        alt="">
+                    <div>
+                        <h2 style="color: #333;">Technology And Web Development</h2>
+
+                        <a href="/technology_and_webdevelopment" class="btn btn-primary" style="margin-top: 50px;">Read
+                            On This</a>
+                    </div>
+                </section>
+                <section class="carder" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1529154691717-3306083d869e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        alt="">
+                    <div>
+                        <h2 style="color: #333;">Gaming And Fiction</h2>
+
+                        <a href="/gaming_and_fiction" class="btn btn-primary" style="margin-top: 50px;">Read On This</a>
+                    </div>
+                </section>
+
+                <div style="margin-top: 40px;" data-aos="fade-left">
+                    <a href="/allposts" class="mb-4 mt-4 btn btn-primary"
+                        style="font-size: 23px; margin-bottom: 40px;">View All
+                        Posts <i class="fa fa-chevron-right" style="color: white;"></i><i class="fa fa-chevron-right"
+                            style="color: white;"></i></a>
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px; margin-bottom: 40px;" data-aos="fade-right" id="newletter">
+                <h1 style="color: #555;">Subscribe</h1>
+                <p style="font-size: 23px;">Subscribe To Our News Letter For New Posts</p>
+                <form class="form-inline" action="/">
+                    <label for="email" class="mr-md-2" style="font-size: 20px;">Email address:</label>
+                    <input type="email" class="form-control mb-2 mr-md-2" id="email" required>
+                    <button type="submit" class="btn btn-primary mb-2" onclick="news()">Submit</button>
+                </form>
+            </div>
 
 
-</div>
-<%- include('partials/footer.ejs') %>
+        </div>
+        <%- include('partials/footer.ejs') %>
 
 
 
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+        </script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.menu-toggle').on('click', function () {
+                    $('.nav').toggleClass('showing');
+                    $('.nav ul').toggleClass('showing');
+                });
+
+                //menu and cancel btn
+
+                function menuBtn() {
+                    document.getElementById("menuBtn").style.display = 'none';
+                    document.getElementById("cancelBtn").style.display = 'block';
+                }
+
+                function cancelBtn() {
+                    document.getElementById("menuBtn").style.display = 'block';
+                    document.getElementById("cancelBtn").style.display = 'none';
+                }
+
+                function news(){
+                    alert("Thanks For Subscribing");
+                }
+
+                $('.post-wrapper').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    nextArrow: $('.next'),
+                    prevArrow: $('.prev'),
+                    responsive: [{
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 3,
+                                infinite: true,
+                                dots: true
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToShow: 1
+                            }
+                        }
+                    ],
+                });
+            });
+
+            // scroll animation
+            AOS.init({
+                offset: 400,
+                duration: 1000
+            });
+        </script>
+
+</body>
+
+</html>

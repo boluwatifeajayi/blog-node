@@ -79,7 +79,6 @@ app.get('/', function(req, res){
         }else{
             res.render('index', {
                 title: "innovate",
-                description: "Short description of the article",
                 articles: articles
                 
             });
@@ -88,26 +87,211 @@ app.get('/', function(req, res){
     }).sort({postDate: 'desc'});
     
 });
-app.get('/', function (req, res) {
+
+//home route
+app.get('/home', function (req, res) {
     Article.find({}, function (err, articles, article) {
         if (err) {
             console.log(err);
         } else {
-            res.render('index', {
+            res.render('home', {
                 title: "innovate",
                 articles: articles
 
             });
         }
 
+    }).sort({
+        postDate: 'desc'
     });
 
 });
+
+//gaming and tv
+app.get('/allposts', function (req, res) {
+    Article.find({}, function (err, articles, article) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('allposts', {
+                title: "innovate",
+                articles: articles
+
+            });
+        }
+
+    }).sort({
+        postDate: 'desc'
+    });
+
+});
+
+//Life Style Route route
+app.get('/lifestyle', function (req, res) {
+    Article.find({}, function (err, articles, article) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('lifestyle', {
+                title: "innovate",
+                articles: articles
+
+            });
+        }
+
+    }).sort({
+        postDate: 'desc'
+    });
+
+});
+
+//life hacks Route
+app.get('/lifehacks', function (req, res) {
+    Article.find({}, function (err, articles, article) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('lifehacks', {
+                title: "innovate",
+                articles: articles
+
+            });
+        }
+
+    }).sort({
+        postDate: 'desc'
+    });
+
+});
+
+//world news route
+app.get('/worldnews', function (req, res) {
+    Article.find({}, function (err, articles, article) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('worldnews', {
+                title: "innovate",
+                articles: articles
+
+            });
+        }
+
+    }).sort({
+        postDate: 'desc'
+    });
+
+});
+
+//Foods and dishes route
+app.get('/food_and_dishes', function (req, res) {
+    Article.find({}, function (err, articles, article) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('food_and_dishes', {
+                title: "innovate",
+                articles: articles
+
+            });
+        }
+
+    }).sort({
+        postDate: 'desc'
+    });
+
+});
+
+//technology and web
+app.get('/technology_and_webdevelopment', function (req, res) {
+    Article.find({}, function (err, articles, article) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('technology_and_webdevelopment', {
+                title: "innovate",
+                articles: articles
+
+            });
+        }
+
+    }).sort({
+        postDate: 'desc'
+    });
+
+});
+
+//gaming and tv
+app.get('/gaming_and_fiction', function (req, res) {
+    Article.find({}, function (err, articles, article) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('gaming_and_fiction', {
+                title: "innovate",
+                articles: articles
+
+            });
+        }
+
+    }).sort({
+        postDate: 'desc'
+    });
+
+});
+
+//entertainment
+app.get('/entertainment', function (req, res) {
+    Article.find({}, function (err, articles, article) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('entertainment', {
+                title: "innovate",
+                articles: articles
+
+            });
+        }
+
+    }).sort({
+        postDate: 'desc'
+    });
+
+});
+
+//other
+app.get('/other', function (req, res) {
+    Article.find({}, function (err, articles, article) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('others', {
+                title: "innovate",
+                articles: articles
+
+            });
+        }
+
+    }).sort({
+        postDate: 'desc'
+    });
+
+});
+
+
+
 
 //about route
 app.get('/about', function (req, res) {
    res.render('about');
 });
+
+//login error route
+app.get('/loginerror', function (req, res) {
+    res.render('loginerror');
+});
+
+
 
 //route files
 

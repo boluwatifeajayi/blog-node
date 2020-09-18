@@ -18,7 +18,7 @@ router.get("/edit/:id", ensureAuthenticated, function (req, res) {
     Article.findById(req.params.id, function (err, article) {
         if (article.author != req.user._id) {
             req.flash('danger', 'Not Authorized');
-            return res.redirect('/');
+            return res.redirect('/allposts');
         }
         res.render("edit_article", {
             title: 'Edit Article',
@@ -36,6 +36,7 @@ router.post('/add', function (req, res) {
     article.description = req.body.description;
     article.createdAt = req.body.createdAt;
     article.body = req.body.body;
+    article.category = req.body.category;
     article.image = req.body.image;
     article.writer = req.body.writer;
     article.postDate = req.body.postDate;
@@ -52,7 +53,7 @@ router.post('/add', function (req, res) {
             console.log(err);
             return;
         } else {
-            res.redirect('/');
+            res.redirect('/allposts');
         }
     });
 
@@ -67,6 +68,7 @@ router.post("/edit/:id", function (req, res) {
     article.description = req.body.description;
     article.createdAt = req.body.createdAt;
     article.body = req.body.body;
+    article.category = req.body.category;
     article.image = req.body.image;
     article.writer = req.body.writer;
     article.postDate = req.body.postDate;
@@ -87,7 +89,7 @@ router.post("/edit/:id", function (req, res) {
             return;
         } else {
             req.flash('success', 'Article updated');
-            res.redirect("/");
+            res.redirect("/allposts");
         }
     });
 });
@@ -122,12 +124,24 @@ router.delete('/:id', function (req, res) {
 //get single article
 router.get('/:id', function (req, res) {
     Article.findById(req.params.id, function (err, article) {
-        User.findById(article.author, function (err, user) {
-            res.render("article", {
-                article: article,
-                author: user.name
+        if(err){
+            res.render('error');
+            console.log("there was an error")
+        }else{
+            User.findById(article.author, function (err, user) {
+                if (err) {
+                    res.render("error")
+                    console.log("there was an error");
+                } else {
+                    res.render("article", {
+                        article: article,
+                        author: user.name
+                    });
+                }
+
             });
-        });
+        }
+        
 
     });
 });

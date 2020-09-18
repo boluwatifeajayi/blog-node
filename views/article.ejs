@@ -10,6 +10,14 @@
     p{
     font-size: 19px;
     }
+    .link-item{
+        padding-left:0px;
+    }
+    .link-item:hover{
+        padding-left: 20px;
+        transition: all 0.5s;
+
+    }
     .post-body{
     background-color: white;
     margin-top: 45px;
@@ -32,7 +40,8 @@
             <img src="<%=article.image%>" class="mt-4" alt="<%=article.title%>">
             <h3 class="mt-4 mb-4"><%=article.title%></h3>
             
-                <p style="font-size: 18px;"><i class="fa fa-user"></i> By <strong><%= article.writer %></strong></p>
+                <p style="font-size: 18px;"><i class="fa fa-user"></i> By <strong><%= article.writer %></strong> Under
+                    <strong><%= article.category %></strong></p>
                 <p style="font-size: 18px;"><i class="fa fa-calendar"></i> <%= article.postDate %></p>
             
             <%-article.body%>
@@ -48,38 +57,95 @@
             
 
             <div class="side">
-                <h3 class="mt-4">Recommended Reads For You</h3>
+                <h3 class="mt-4">Topics</h3>
             </div>
             
             <b>
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <a href="<%=article.nextLinkOne%>">
-                            <p>
-                                <%=article.nextTitleOne%>
+                        <a href="/lifehacks">
+                            <p class="link-item">
+                                Life Hacks
                             </p>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="<%=article.nextLinkTwo%>">
-                            <p>
-                                <%=article.nextTitleTwo%>
+                        <a href="/worldnews">
+                            <p class="link-item">
+                                World News
                             </p>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="<%=article.nextLinkThree%>">
-                            <p>
-                                <%=article.nextTitleThree%>
+                        <a href="/entertainment">
+                            <p class="link-item">
+                                Entertainment
                             </p>
                         </a>
                     </li>
-
+                    <li class="list-group-item">
+                        <a href="/food_and_dishes">
+                            <p class="link-item">
+                                Food And Dishes
+                            </p>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/lifestyle">
+                            <p class="link-item">
+                                Life Style
+                            </p>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/technology_and_webdevelopment">
+                            <p class="link-item">
+                                Technology And Web Development
+                            </p>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/gaming_and_fiction" >
+                            <p class="link-item">
+                                Gaming And Fiction
+                            </p>
+                        </a>
+                    </li>
+                    
                 </ul>
+                <div class="side">
+                    <h3 class="mt-4">Recommended Reads For You</h3>
+                </div>
+
+                <b>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="<%=article.nextLinkOne%>">
+                                <p class="link-item">
+                                    <%=article.nextTitleOne%>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="<%=article.nextLinkTwo%>">
+                                <p class="link-item">
+                                    <%=article.nextTitleTwo%>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="<%=article.nextLinkThree%>">
+                                <p class="link-item">
+                                    <%=article.nextTitleThree%>
+                                </p>
+                            </a>
+                        </li>
+
+                    </ul>
                 
             </b>
             <div style="margin-top: 40px;">
-                 <a href="/" class="mb-4 mt-4 btn btn-primary" style="font-size: 23px; margin-bottom: 40px;">View All Posts <i
+                 <a href="/allposts" class="mb-4 mt-4 btn btn-primary" style="font-size: 23px; margin-bottom: 40px;">View All Posts <i
                          class="fa fa-chevron-right" style="color: white;"></i><i class="fa fa-chevron-right"
                              style="color: white;"></i></a>
             </div>
