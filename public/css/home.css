@@ -221,6 +221,7 @@ h5 {
     width: 80%;
     height: 350px;
     margin: 0px auto;
+    padding-bottom: 50px;
     overflow: hidden;
     padding: 10px 0px 10px 0px;
 }
