@@ -190,6 +190,7 @@ h5 {
 .post-slider {
 
     position: relative;
+    margin-bottom: 40px;
 
 }
 
@@ -230,7 +231,7 @@ h5 {
     background: white;
     display: inline-block;
     width: 350px;
-    height: 320px;
+    height: 390px;
     margin: 10px;
     border-radius: 5px;
     box-shadow: 1rem 1rem 1rem -1rem lightgrey;

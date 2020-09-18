@@ -116,14 +116,15 @@
                             <img src="<%=articles[key].image%>" alt="<%= articles[key].title %>" class="slider-image">
                             <div class="post-info">
                                 <h4>
-                                    <h4><a href="single.html"><a
+                                    <h4><a href="/articles/<%=articles[key]._id%>"><a
                                                 href="/articles/<%=articles[key]._id%>"><%= articles[key].title %></a></a>
                                     </h4>
-                                    <i class="fa fa-user" style="color: #555;"> <%= articles[key].writer%></i>
+                                    <i class="fa fa-user" style="color: #555; font-size: 14px;"> <%= articles[key].writer%></i>
                                     &nbsp;
-                                    <i class="fa fa-calendar" style="color: #555;">
-                                        <%= articles[key].postDate %></i><br>
-                                    <i class="fa fa-list-alt" style="color: #555;"> <%= articles[key].category %></i>
+                                    <i class="fa fa-calendar" style="color: #555; font-size: 14px;">
+                                        <%= articles[key].postDate %></i>&nbsp;
+                                    <i class="fa fa-list-alt" style="color: #555; font-size: 14px;">
+                                        <%= articles[key].category %></i>
                                 </h4>
                             </div>
                         </div>
