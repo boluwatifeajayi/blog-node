@@ -165,12 +165,12 @@ app.get('/lifehacks', function (req, res) {
 });
 
 //world news route
-app.get('/worldnews', function (req, res) {
+app.get('/healthandbeauty', function (req, res) {
     Article.find({}, function (err, articles, article) {
         if (err) {
             console.log(err);
         } else {
-            res.render('worldnews', {
+            res.render('healthandbeauty', {
                 title: "innovate",
                 articles: articles
 

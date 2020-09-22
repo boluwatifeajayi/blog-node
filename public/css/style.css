@@ -16,6 +16,10 @@ h2, h3, h4, h5, h6, strong, a, i{
     color: #007bff;
 }
 
+a:hover{
+    text-decoration: none;
+}
+
 
 
 .carder {
