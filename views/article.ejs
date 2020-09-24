@@ -1,5 +1,5 @@
 <%- include('partials/layout.ejs') %>
-<title><%=article.title%></title>
+<title><%=article.title%> | Bluenovate</title>
 <style>
     body{
         background-color: #f1f1f1;
@@ -36,7 +36,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-8 post-body">
+        <div class="col-lg-9 post-body">
             <img src="<%=article.image%>" class="mt-4" alt="<%=article.title%>">
             <h3 class="mt-4 mb-4"><%=article.title%></h3>
             
@@ -48,12 +48,15 @@
             <hr>
             
             
+            
+            
+            
             <%if (user) { %>
             <a href="/articles/edit/<%=article._id%>" class="btn btn-secondary mb-4">Edit Post</a>
             <a href="#" class="btn btn-danger delete-article mb-4" data-id="<%=article._id%>">Delete Post</a>
             <% } %>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             
 
             <div class="side">
@@ -138,10 +141,12 @@
                     </ul>
                 
             </b>
-            <div style="margin-top: 40px;">
-                 <a href="/allposts" class="mb-4 mt-4 btn btn-primary" style="font-size: 23px; margin-bottom: 40px;">View All Posts <i
-                         class="fa fa-chevron-right" style="color: white;"></i><i class="fa fa-chevron-right"
-                             style="color: white;"></i></a>
+            <div style="margin-top: 40px; align-items: center; text-align: center; justify-content: center;">
+                <a href="/allposts" class="mb-4 mt-4 btn"
+                    style="font-size: 23px; margin-bottom: 40px; color: #022d5a;">View
+                    All
+                    Posts <i class="fa fa-chevron-right" style="color:#022d5a;"></i><i class="fa fa-chevron-right"
+                        style="color:#022d5a;"></i></a>
             </div>
            
             

@@ -17,8 +17,8 @@ nav {
 }
 body {
     
-    font-family: 'Quicksand',
-        sans-serif;
+    font-family: 'Noto Sans',
+    sans-serif;
     color: #555;
     background-color: #f1f1f1;
 }
@@ -31,7 +31,7 @@ a:hover{
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .show>.nav-link {
-    color:#007bff;
+    color:#022d5a;
 }
 
 .navbar .navbar-expand-lg .navbar-light {
@@ -51,11 +51,11 @@ a:hover{
 }
 
 .dropdown-item:hover {
-    background:#007bff;
+    background: ghostwhite;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color:#007bff;
+    color:ghostwhite;
     transition: 0.5s;
 }
 
@@ -118,17 +118,17 @@ a.admin:hover{
 
 .section-one {
     padding-bottom: 40px;
-    border-bottom: 5px solid #007bff;
+    border-bottom: 5px solid #022d5a;
     border-top: 3px solid transparent;
 }
 
 .section-one:hover {
-    border-top: 3px solid #007bff;
+    border-top: 3px solid #022d5a;
     transition: 1.5s;
 }
 
 .secondary {
-    color:#007bff;
+    color:#022d5a;
 }
 
 .section-one h1,
@@ -165,8 +165,8 @@ h5 {
 
 .btn-group-lg>.btn,
 .btn-lg:hover {
-    background-color:#007bff;
-    border: 1px solid #007bff;
+    background-color:#022d5a;
+    border: 1px solid #022d5a;
     transition: 1s;
     color: white;
 }
@@ -206,7 +206,7 @@ h5 {
     top: 50%;
     right: 30px;
     font-size: 2em;
-    color: #007bff;
+    color: #022d5a;
     cursor: pointer;
 }
 
@@ -215,7 +215,7 @@ h5 {
     top: 50%;
     left: 30px;
     font-size: 2em;
-    color: #007bff;
+    color: #022d5a;
     cursor: pointer;
 }
 
@@ -506,7 +506,7 @@ img {
     .btn-lg {
         color: white;
         text-decoration: none;
-        background:#007bff;
+        background:#022d5a;
         border: none;
         margin-top: 40px;
 

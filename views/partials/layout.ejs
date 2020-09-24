@@ -6,6 +6,7 @@
     <meta name="google-site-verification" content="Pk-LilHCNJdJ_yn-6WDGAiQLA7hrHG8r8VEul-9660s" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -17,8 +18,9 @@
     
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-        <a class="navbar-brand" href="/">BLUENOVATE <i style="color: #fff;" class="fa fa-lightbulb-o"></i></a>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/" style="font-weight: bolder; color: #022d5a;">BLUENOVATE <i
+                style="color: #022d5a;" class="fa fa-lightbulb-o"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,14 +34,14 @@
                 
             </ul>
             <li class="nav-item" style="list-style-type: none;">
-                <a class="nav-link" href='/' style="color: white;">Home</a>
+                <a class="nav-link" href='/' style="color: #022d5a">Home</a>
             </li>
             
             <li class="nav-item" style="list-style-type: none;">
-                <a class="nav-link" href='/about' style="color: white;">About Us</a>
+                <a class="nav-link" href='/about' style="color: #022d5a">About Us</a>
             </li>
             <li class="nav-item dropdown" style="list-style-type: none;">
-                <a class="nav-link dropdown-toggle" style="color: white;" href="#" id="navbarDropdown" role="button"
+                <a class="nav-link dropdown-toggle" style="color: #022d5a" href="#" id="navbarDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Blog Posts
                 </a>
@@ -58,17 +60,16 @@
                 </div>
             </li>
             <li class="nav-item" style="list-style-type: none;">
-                <a class="nav-link" href='/home#newsletter' style="color: white;">News Letter</a>
+                <a class="nav-link" href='/home#newsletter' style="color: #022d5a;">News Letter</a>
             </li>
                 <%if (user) { %>
-                 <a class="nav-link btn btn-light" href='/articles/add' style="color: dodgerblue; font-weight: bolder;">Add
+                 <a class="nav-link btn btn-light" href='/articles/add' style="color: #022d5a; font-weight: bolder;">Add
                      New Post</a>
                 <% } %>
                 <%if (!user) { %>
-                <a class="nav-link btn btn-light" href='/users/login'
-                    style="color: dodgerblue; font-weight: bolder;">Admin Section <i class="fa fa-user"></i></a>
+               
                 <% } else { %>
-                <a class="nav-link" href='/users/logout' style="color: white;">Logout</a>
+                <a class="nav-link" href='/users/logout' style="color:#022d5a;">Logout</a>
                 <% } %>
                     
                 

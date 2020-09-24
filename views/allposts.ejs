@@ -1,6 +1,6 @@
 <%- include('partials/layout.ejs') %>
 
-<title>Innovate - Blog</title>
+<title>All Posts | Bluenovate</title>
 <style>
     input[type=text] {
         width: 25%;
@@ -48,7 +48,7 @@
                         <%= articles[key].postDate %></p>
 
                     <p><%=articles[key].description%></p>
-                    <a href="/articles/<%=articles[key]._id%>" class="btn btn-primary">Read More..</a>
+                    <a href="/articles/<%=articles[key]._id%>" style="font-weight: bold;">Read More..</a>
 
                 </div>
             </section>

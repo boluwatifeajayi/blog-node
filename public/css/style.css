@@ -1,6 +1,6 @@
 body{
     
-    font-family: 'Quicksand',
+    font-family: 'Noto Sans',
     sans-serif;
     color: #555;
     background-color: #f1f1f1;
@@ -12,8 +12,19 @@ img{
     width: 100%;
 }
 
-h2, h3, h4, h5, h6, strong, a, i{
-    color: #007bff;
+strong, a, i{
+    color:#022d5a;
+}
+h2,
+h3,
+h4
+{
+    font-weight: bolder;
+    color: #555;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h5, h6{
+    color: #555;
 }
 
 a:hover{

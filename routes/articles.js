@@ -135,7 +135,8 @@ router.get('/:id', function (req, res) {
                 } else {
                     res.render("article", {
                         article: article,
-                        author: user.name
+                        author: user.name,
+                        
                     });
                 }
 

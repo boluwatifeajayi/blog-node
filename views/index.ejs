@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Quicksand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/home.css">
@@ -26,7 +27,7 @@
         <div class="header">
             <div class="nav">
                 <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: transparent;">
-                    <a class="navbar-brand" href="/" style="font-weight: bolder;">BLUENOVATE <i style="color: #007bff;"
+                    <a class="navbar-brand" href="/" style="font-weight: bolder;">BLUENOVATE <i style="color:#022d5a;"
                             class="fa fa-lightbulb-o"></i></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -79,8 +80,7 @@
                                 New Post <i class="fa fa-plus"></i></a>
                             <% } %>
                             <%if (!user) { %>
-                            <a class="btn btn-primary admin" href='/users/login'>Admin
-                                Section <i class="fa fa-user"></i></a>
+                            
                             <% } else { %>
 
                             <% } %>
@@ -93,11 +93,10 @@
                 </nav>
             </div>
             <div class="action container">
-                <h1>Your Trusty Source Of <span class="secondary">Innovative</span> And <span
-                        class="secondary">Healthy</span> Knowledge</h1>
+                <h1>Your Trusty Source Of Innovative And Healthy Knowledge</h1>
                 <h3>Bluenovate - Blog</h3>
 
-                <a class="btn btn-lg" href="#bod">Explore Now</a>
+                <a class="btn btn-lg" href="#bod" style="background-color:  #022d5a; border: none;">Explore Now</a>
 
             </div>
         </div>
@@ -118,7 +117,8 @@
                             <div class="post-info">
                                 <h4>
                                     <h4 style="font-size: 17px; font-weight: bold;"><a href="/articles/<%=articles[key]._id%>"><a
-                                                href="/articles/<%=articles[key]._id%>"><%= articles[key].title %></a></a>
+                                                href="/articles/<%=articles[key]._id%>" style="color:
+                                                #022d5a"><%= articles[key].title %></a></a>
                                     </h4>
                                     <i class="fa fa-user" style="color: #555; font-size: 14px;"> <%= articles[key].writer%></i>
                                     &nbsp;
@@ -134,10 +134,11 @@
                     </div>
 
                     <div style="margin-top: 40px; align-items: center; text-align: center; justify-content: center;">
-                        <a href="/allposts" class="mb-4 mt-4 btn btn-primary" style="font-size: 23px; margin-bottom: 40px;">View
+                        <a href="/allposts" class="mb-4 mt-4 btn"
+                            style="font-size: 23px; margin-bottom: 40px; color: #022d5a;">View
                             All
-                            Posts <i class="fa fa-chevron-right" style="color: white;"></i><i
-                                class="fa fa-chevron-right" style="color: white;"></i></a>
+                            Posts <i class="fa fa-chevron-right" style="color:#022d5a;"></i><i
+                                class="fa fa-chevron-right" style="color:#022d5a;"></i></a>
                     </div>
 
                 </div>
@@ -162,7 +163,8 @@
                     <div>
                         <h2 style="color: #333;">Health And Beauty</h2>
 
-                        <a href="/healthandbeauty" class="btn btn-primary" style="margin-top: 50px;">Read On This</a>
+                        <a href="/healthandbeauty" class="btn" style="margin-top: 50px; color: #022d5a; font-size: 20px;">Read On
+                            This...</a>
                     </div>
                 </section>
                 <section class="carder" data-aos="fade-right">
@@ -171,7 +173,9 @@
                     <div>
                         <h2 style="color: #333;">Entertainment</h2>
 
-                        <a href="/entertainment" class="btn btn-primary" style="margin-top: 50px;">Read On This</a>
+                        <a href="/entertainment" class="btn"
+                            style="margin-top: 50px; color: #022d5a; font-size: 20px; ">Read
+                            On This...</a>
                     </div>
                 </section>
                 <section class="carder" data-aos="fade-left">
@@ -180,7 +184,9 @@
                     <div>
                         <h2 style="color: #333;">Food and Dishes</h2>
 
-                        <a href="/food_and_dishes" class="btn btn-primary" style="margin-top: 50px;">Read On This</a>
+                        <a href="/food_and_dishes" class="btn"
+                            style="margin-top: 50px; color: #022d5a; font-size: 20px; ">Read
+                            On This...</a>
                     </div>
                 </section>
                 <section class="carder" data-aos="fade-right">
@@ -189,7 +195,9 @@
                     <div>
                         <h2 style="color: #333;">Life Style</h2>
 
-                        <a href="/lifestyle" class="btn btn-primary" style="margin-top: 50px;">Read On This</a>
+                        <a href="/lifestyle" class="btn"
+                            style="margin-top: 50px; color: #022d5a; font-size: 20px; ">Read
+                            On This...</a>
                     </div>
                 </section>
                 <section class="carder" data-aos="fade-left">
@@ -198,8 +206,9 @@
                     <div>
                         <h2 style="color: #333;">Technology And Web Development</h2>
 
-                        <a href="/technology_and_webdevelopment" class="btn btn-primary" style="margin-top: 50px;">Read
-                            On This</a>
+                        <a href="/technology_and_webdevelopment" class="btn"
+                            style="margin-top: 50px; color: #022d5a; font-size: 20px; ">Read
+                            On This...</a>
                     </div>
                 </section>
                 <section class="carder" data-aos="fade-right">
@@ -208,16 +217,18 @@
                     <div>
                         <h2 style="color: #333;">Gaming And Fiction</h2>
 
-                        <a href="/gaming_and_fiction" class="btn btn-primary" style="margin-top: 50px;">Read On This</a>
+                        <a href="/gaming_and_fiction" class="btn"
+                            style="margin-top: 50px; color: #022d5a; font-size: 20px; ">Read
+                            On This...</a>
                     </div>
                 </section>
                 <section style="margin-top: 40px; align-items: center; text-align: center; justify-content: center;"
                     data-aos="fade-left">
-                    <a href="/allposts" class="mb-4 mt-4 btn btn-primary"
-                        style="font-size: 23px; margin-bottom: 40px;">View
+                    <a href="/allposts" class="mb-4 mt-4 btn"
+                        style="font-size: 23px; margin-bottom: 40px; color: #022d5a;">View
                         All
-                        Posts <i class="fa fa-chevron-right" style="color: white;"></i><i class="fa fa-chevron-right"
-                            style="color: white;"></i></a>
+                        Posts <i class="fa fa-chevron-right" style="color: #022d5a;"></i><i class="fa fa-chevron-right"
+                            style="color: #022d5a"></i></a>
                     <section />
                 </main>
                 
@@ -231,7 +242,7 @@
                 <form class="form-inline" action="/">
                     <label for="email" class="mr-md-2" style="font-size: 20px;">Email address:</label>
                     <input type="email" class="form-control mb-2 mr-md-2" id="email" required>
-                    <button type="submit" class="btn btn-primary mb-2" onclick="news()">Submit</button>
+                    <button type="submit" class="btn btn-secondary mb-2" onclick="news()">Submit</button>
                 </form>
             </div>
 
