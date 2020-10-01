@@ -285,6 +285,10 @@ app.get('/other', function (req, res) {
 app.get('/about', function (req, res) {
    res.render('about');
 });
+//contact route
+app.get('/contact', function (req, res) {
+    res.render('contact');
+});
 
 //login error route
 app.get('/loginerror', function (req, res) {

@@ -301,7 +301,7 @@ img {
     order: 2;
 }
 
-@media(max-width: 700px) {
+@media(max-width: 900px) {
     .carder {
         display: block;
     }
@@ -318,7 +318,7 @@ img {
 
 
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) {
     .content {
         width: 100%;
     }
@@ -393,7 +393,7 @@ img {
     display: none;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) {
     header {
         position: relative;
     }
@@ -463,7 +463,7 @@ img {
 
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
 
     .mr-auto,
     .mx-auto {
@@ -474,7 +474,7 @@ img {
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
 
     .mr-auto,
     .mx-auto {
@@ -514,7 +514,7 @@ img {
 
     .btn-group-lg>.btn,
     .btn-lg:hover {
-        background-color: orange;
+        background-color: #022d5a;
         border: none;
         transition: 0s;
         color: white;
@@ -526,7 +526,7 @@ img {
     }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) {
     
 
     .post-slider .next {

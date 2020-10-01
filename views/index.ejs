@@ -13,6 +13,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Quicksand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/home.css">
+    <link rel="icon" href="/img/lightbulb.png" type="image/x-icon">
 
     <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Quicksand&display=swap" rel="stylesheet">
 
@@ -22,13 +23,13 @@
 
 <body>
     <div class="section-one" style="background-image:
-	    linear-gradient(rgba(0,0.7,0,0.5),rgba(0,0.7,0,0.5)),url(https://cdn.pixabay.com/photo/2020/02/21/13/41/idea-4867554__340.jpg);
+	    linear-gradient(rgba(0,0.7,0,0.3),rgba(0,0.7,0,0.3)),url(https://cdn.pixabay.com/photo/2020/02/21/13/41/idea-4867554__340.jpg);
 	    background-size: cover; background-position: center; background-color:dimgrey;">
         <div class="header">
             <div class="nav">
                 <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: transparent;">
-                    <a class="navbar-brand" href="/" style="font-weight: bolder;">BLUENOVATE <i style="color:#022d5a;"
-                            class="fa fa-lightbulb-o"></i></a>
+                    <a class="navbar-brand" href="/" style="font-weight: bolder; color: #022d5a;"><img
+                            src="/img/bluenovatelogo3.png" alt="bluenovatelogo" style="width: 180px; height: 60px"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -70,11 +71,15 @@
 
                                 </div>
                             </li>
-
-
                             <li class="nav-item">
-                                <a class="nav-link" href="#newletter">News Letter</a>
+                                <a class="nav-link" href="/contact">Contact Us</a>
                             </li>
+
+
+
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="#newletter">News Letter</a>
+                            </li> -->
                             <%if (user) { %>
                             <a class="btn btn-primary admin" href='/articles/add'>Add
                                 New Post <i class="fa fa-plus"></i></a>
@@ -236,7 +241,7 @@
                 
             </div>
             
-            <div style="margin-top: 40px; margin-bottom: 40px;" data-aos="fade-right" id="newletter" class="container">
+            <!-- <div style="margin-top: 40px; margin-bottom: 40px;" data-aos="fade-right" id="newletter" class="container">
                 <h1 style="color: #555;">Subscribe</h1>
                 <p style="font-size: 23px;">Subscribe To Our News Letter For New Posts</p>
                 <form class="form-inline" action="/">
@@ -244,7 +249,7 @@
                     <input type="email" class="form-control mb-2 mr-md-2" id="email" required>
                     <button type="submit" class="btn btn-secondary mb-2" onclick="news()">Submit</button>
                 </form>
-            </div>
+            </div> -->
 
 
         </div>
@@ -305,10 +310,10 @@
                             }
                         },
                         {
-                            breakpoint: 600,
+                            breakpoint: 900,
                             settings: {
-                                slidesToShow: 1,
-                                slidesToScroll: 1
+                                slidesToShow: 2,
+                                slidesToScroll: 2
                             }
                         },
                         {
