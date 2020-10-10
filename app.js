@@ -1,4 +1,5 @@
 const express = require('express');
+const connectDB = require('./config/db')
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -8,6 +9,8 @@ const session = require('express-session');
 const passport = require('passport');
 const config = require('./config/database');
 const hbs = require('hbs');
+
+connectDB()
 
 mongoose.connect(config.database,{ useNewUrlParser: true, useUnifiedTopology: true});
 let db = mongoose.connection;
